@@ -1,39 +1,43 @@
 import { useEffect, useState } from "react";
 import DecksPage from "./Pages/DecksPage";
 import FlashcardPage from "./Pages/FlashcardsPage";
-import Kana from "./Pages/Kana";
+import LettersPage from "./Pages/LettersPage";
 import Header from "./Components/Header";
-import {createBrowserRouter , RouterProvider} from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
+import Hiragana from "./Components/letters/Hiragana";
+import Katakana from "./Components/letters/Katakana";
+import Kanji from "./Components/letters/Kanji";
 
 function App() {
-  const [view, setView] = useState("deck");
-  const [selectedChar, setSelectedChar] = useState("");
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <>
-          {view === "deck" ? (
-            <DecksPage setView={setView} setSelectedChar={setSelectedChar} />
-          ) : (
-            <FlashcardPage setView={setView} selectedChar={selectedChar} />
-          )}
-        </>
-      )
-    },
-    {
-      path: "/pages/kana",
-      element: (
-        <>
-          <Header />
-          <Kana />
-        </>
-      )
-    }
-  ]);
-
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={<DecksPage  />}
+        />
+        <Route
+          path="/deck/:char"
+          element={<FlashcardPage />}
+        />
+        <Route
+          path="/letters"
+          element={<LettersPage />}
+        />
+        <Route path="/letters/Hiragana" 
+          element={<Hiragana />} 
+        />
+        <Route path="/letters/Katakana" 
+          element={<Katakana />} 
+        />
+        <Route path="/letters/Kanji" 
+          element={<Kanji />} 
+        />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
