@@ -21,7 +21,7 @@ function Header() {
 
       <ul>
         <li><Link to={"/"}>Decks</Link></li>
-        <li><Link to={"/letters"}>Letters</Link></li>
+        <li><Link to={"/letters"}>Kana</Link></li>
       </ul>
 
       <img src={pro_pic} alt="" className='profile'/>
