@@ -1,16 +1,42 @@
-# React + Vite
+# Manabu 学ぶ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple kanji flashcard app for learning Japanese. Built with React.
 
-Currently, two official plugins are available:
+## What it does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Browse JLPT N5 kanji decks
+- Click a kanji to see its words and readings
+- Login / logout flow with a protected dashboard
 
-## React Compiler
+## Tech
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + Vite
+- React Router
+- [kanjiapi.dev](https://kanjiapi.dev) for kanji data
+- Vanilla CSS
 
-## Expanding the ESLint configuration
+## Running locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Then open `http://localhost:5173`
+
+## Demo login
+
+```
+Email:    student@manabu.com
+Password: kanji123
+```
+
+## Project structure
+
+```
+src/
+├── context/        # Auth state (AuthContext)
+├── Components/     # Header, Folder, Flashcard, ProtectedRoute
+├── Pages/          # DecksPage, FlashcardsPage, LoginPage
+└── services/       # API calls to kanjiapi.dev
+```
