@@ -1,0 +1,45 @@
+.char{
+  display: flex;
+  height: 500px;
+  width: 1400px;
+  border: 1px black solid;
+  border-radius: 60px;
+  margin-top: 90px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.34);
+  justify-content: space-evenly;
+}
+
+.Hiragana{
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.34);
+  height: 300px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Katakana{
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.34);
+  height: 300px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Kanji{
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.34);
+  height: 300px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
