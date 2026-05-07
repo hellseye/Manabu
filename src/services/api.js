@@ -1,7 +1,7 @@
 const API_URL = "https://kanjiapi.dev/v1"
 
-export async function fetchKanjiLetters(){
-    const api = API_URL + "/kanji/grade-1";
+export async function fetchKanjiLetters() {
+    const api = API_URL + "/kanji/jlpt-5";
     try {
         let response = await fetch(api);
         let data = await response.json();
@@ -11,14 +11,14 @@ export async function fetchKanjiLetters(){
     }
 }
 
-export async function fetchWords(char="蠍") {
+export async function fetchWords(char = "蠍") {
     const api = API_URL + "/words/" + char;
     try {
         let response = await fetch(api);
         let data = await response.json();
         // console.log(data)
         return data;
-    } catch (err){
+    } catch (err) {
         console.log(err);
     }
 

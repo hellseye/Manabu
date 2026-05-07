@@ -1,27 +1,45 @@
-import { useEffect, useState } from "react";
 import DecksPage from "./Pages/DecksPage";
 import FlashcardPage from "./Pages/FlashcardsPage";
 import LettersPage from "./Pages/LettersPage";
+import LoginPage from "./Pages/LoginPage";
 import Header from "./Components/Header";
+import ProtectedRoute from "./Components/ProtectedRoute";
 import { Routes, Route } from "react-router-dom";
+import { useAuth } from "./context/AuthContext";
 
 function App() {
+  const { user } = useAuth();
 
   return (
     <>
-      <Header />
+      {user && <Header />}
+
       <Routes>
+        <Route path="/login" element={<LoginPage />} />
+
         <Route
           path="/"
-          element={<DecksPage  />}
+          element={
+            <ProtectedRoute>
+              <DecksPage />
+            </ProtectedRoute>
+          }
         />
         <Route
           path="/deck/:char"
-          element={<FlashcardPage />}
+          element={
+            <ProtectedRoute>
+              <FlashcardPage />
+            </ProtectedRoute>
+          }
         />
         <Route
           path="/letters"
-          element={<LettersPage />}
+          element={
+            <ProtectedRoute>
+              <LettersPage />
+            </ProtectedRoute>
+          }
         />
       </Routes>
     </>
@@ -29,4 +47,3 @@ function App() {
 }
 
 export default App;
-
