@@ -1,15 +1,16 @@
 .quiz-container {
-  height: 500px;
   background-color: #1e293b;
   color: white;
   text-align: center;
   border-radius: 60px;
   margin-top: 40px;
+  padding: 30px 24px;
+  min-height: 420px;
 }
 
 .quiz-header {
-  padding: 24px;
-  margin-bottom: 32px;
+  padding: 24px 0;
+  margin-bottom: 24px;
 }
 
 .quiz-title {
@@ -19,13 +20,13 @@
 }
 
 .hiragana-letter {
-  font-size: 128px;
+  font-size: clamp(4rem, 12vw, 8rem);
   font-weight: bold;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .input-section {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .quiz-input {
@@ -44,4 +45,25 @@
 
 .error-box {
   margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .quiz-container {
+    border-radius: 36px;
+    padding: 24px 18px;
+    min-height: auto;
+  }
+
+  .quiz-title {
+    font-size: 20px;
+  }
+
+  .hiragana-letter {
+    font-size: clamp(3.2rem, 14vw, 6rem);
+  }
+
+  .quiz-input {
+    width: 80px;
+    font-size: 48px;
+  }
 }

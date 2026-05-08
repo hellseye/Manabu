@@ -1,45 +1,44 @@
-.char{
+.char {
   display: flex;
-  height: 500px;
-  width: 1400px;
+  flex-wrap: wrap;
+  width: min(100%, 1400px);
+  max-width: 100%;
   border: 1px black solid;
   border-radius: 60px;
-  margin-top: 90px;
+  margin: 90px auto 0;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.34);
-  justify-content: space-evenly;
+  gap: 24px;
+  padding: 24px;
 }
 
-.Hiragana{
+.Hiragana,
+.Katakana,
+.Kanji {
   border: 1px solid black;
   border-radius: 20px;
   box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.34);
-  height: 300px;
-  width: 250px;
+  min-height: 260px;
+  width: min(250px, 100%);
+  max-width: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
 }
 
-.Katakana{
-  border: 1px solid black;
-  border-radius: 20px;
-  box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.34);
-  height: 300px;
-  width: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 680px) {
+  .char {
+    border-radius: 30px;
+    padding: 18px;
+  }
+
+  .Hiragana,
+  .Katakana,
+  .Kanji {
+    min-height: 220px;
+    width: 100%;
+  }
 }
 
-.Kanji{
-  border: 1px solid black;
-  border-radius: 20px;
-  box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.34);
-  height: 300px;
-  width: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

@@ -3,10 +3,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .folder-icon ion-icon {
-    font-size: 120px;
+    font-size: clamp(72px, 8vw, 120px);
 }
 
 .folder:hover {
